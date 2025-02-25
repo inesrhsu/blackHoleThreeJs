@@ -1,0 +1,170 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.loader
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  transition: opacity 0.5s ease-in-out;
+  z-index: -10;
+  
+}
+
+.loading-text
+{
+  
+  /* top: 50%;
+  left: 50%; */
+  color: white;
+  font-family: Helvetica, Arial,sans-serif
+}
+
+.loading-bar
+{
+  
+  width: 0%;
+  height: 2%;
+  max-width: 30vw;
+  
+  /* margin-top: 1%; */
+  /* top: 60%;
+  left: 50%; */
+  animation: fillBar 6s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* progress {
+  width: 300px;
+  height: 20px;
+  appearance: none; /* Remove default styles */
+/*} */
+
+/* WebKit (Chrome, Safari, Edge) */
+progress::-webkit-progress-bar {
+  background-color: black; /* Background color */
+  border-radius: 10px;
+  border: 1px solid white;
+ /* transition: width 0.5s ease-in-out; */
+}
+
+progress::-webkit-progress-value {
+  background-color: white; /* Color of the filled portion */
+  border-radius: 10px;
+  /* transition: width 0.5s ease-in-out; */
+}
+
+
+
+
+/* .loader {
+  width: 300px;
+  height: 20px;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+} */
+
+/* .loading-bar {
+  width: 0%; /* Start from 0 */
+  /* height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  
+  animation: fillProgress 3s ease-in-out forwards;
+} */ 
+/* 
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+} */
+
+
+/* HTML: <div class="loader"></div>
+.loading-bar {
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-bottom: 8px;
+  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+  animation: l2 2s linear infinite;
+}
+.loading-bar:before {
+  content:"Loading..."
+}
+@keyframes l2 {to{background-size: 100% 3px}} */
+/* 
+@keyframes fillBar {
+  from {
+    value: 0%;
+  }
+  to {
+    value: 100%;
+  }
+} */
+
+.ui-text
+{
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  color: white;
+  opacity: 0;
+  font-family: Helvetica, Arial,sans-serif
+}
+
+.bhdist
+{
+  width: 260px;
+  height: 40px;
+  white-space: nowrap;
+  
+  /* background: white; */
+}
+
+.cameraPosition
+{
+  width: 260px;
+  height: 40px;
+  white-space: nowrap;
+}
