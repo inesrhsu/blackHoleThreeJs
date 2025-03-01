@@ -20,5 +20,6 @@ export default class Gui
   setInstance()
   {
     this.instance = new GUI()
+    // this.instance.close()
   }
 }

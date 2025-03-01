@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import Gui from './utils/gui.js'
+import Stats from 'stats.js'
 
 
 export default class UI
@@ -11,10 +12,13 @@ export default class UI
     this.bhDistText = document.querySelector('.bhdist')
     this.cameraPositionText = document.querySelector('.cameraPosition')
 
+    // this.stats = stats
+
     this.uiText.style.opacity = '1.0'
+    this.cameraPositionText.style.opacity = '0.0'
 
     this.gui = new Gui()
-    this.guiFolder = this.gui.instance.addFolder('UI').close()
+    // this.guiFolder = this.gui.instance.addFolder('UI').close()
     this.setGui()
   }
 
@@ -51,10 +55,19 @@ export default class UI
         else{
           this.cameraPositionText.style.opacity = '0.0'
         }
-      }
+      },
+      // statsVisible: true,
+      // toggleStats: () =>{
+      //   if(this.guiObject.statsVisible){
+      //     // this.stats.
+      //   }
+      // }
     }
-    this.guiFolder.add(this.guiObject, 'guiVisible').name('ui').onChange(() => this.guiObject.toggleVisibility())
-    this.guiFolder.add(this.guiObject, 'cameraPositionVisible').name('cameraPosition').onChange(()=> this.guiObject.toggleCamerPositionVisibility())
+
+    this.gui.instance.add(this.guiObject, 'guiVisible').name('ui').onChange(() => this.guiObject.toggleVisibility())
+
+    // this.guiFolder.add(this.guiObject, 'guiVisible').name('ui').onChange(() => this.guiObject.toggleVisibility())
+    // this.guiFolder.add(this.guiObject, 'cameraPositionVisible').name('cameraPosition').onChange(()=> this.guiObject.toggleCamerPositionVisibility())
   }
 
 

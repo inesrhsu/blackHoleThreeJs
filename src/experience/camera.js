@@ -19,7 +19,7 @@ export default class Camera
     this.setControls()
     
     this.gui = new Gui()
-    this.guiFolder = this.gui.instance.addFolder('Camera').close()
+    // this.guiFolder = this.gui.instance.addFolder('Camera').close()
     this.setGui()
 
     this.time = new Time()
@@ -171,12 +171,19 @@ export default class Camera
       speedPerp: this.speedPerp
     }
 
-    this.guiFolder.add(this.guiObject, 'fallMode', { Straight: 'straight', Spiral: 'spiral', LogSpiral: 'logSpiral'})
-    this.guiFolder.add(this.guiObject, 'speedDown').min(0.01).max(200).onChange(()=>{this.speedDown = this.guiObject.speedDown})
-    this.guiFolder.add(this.guiObject, 'speedPerp').min(0.01).max(200).onChange(()=>{this.speedPerp = this.guiObject.speedPerp}).name('speedRotation')
-    this.guiFolder.add(this.guiObject, 'start')
-    this.guiFolder.add(this.guiObject, 'pause')
-    this.guiFolder.add(this.guiObject, 'restart')
+    this.gui.instance.add(this.guiObject, 'fallMode', { Straight: 'straight', Spiral: 'spiral', LogSpiral: 'logSpiral'})
+    this.gui.instance.add(this.guiObject, 'speedDown').min(0.01).max(200).onChange(()=>{this.speedDown = this.guiObject.speedDown})
+    this.gui.instance.add(this.guiObject, 'speedPerp').min(0.01).max(200).onChange(()=>{this.speedPerp = this.guiObject.speedPerp}).name('speedRotation')
+    this.gui.instance.add(this.guiObject, 'start')
+    this.gui.instance.add(this.guiObject, 'pause')
+    this.gui.instance.add(this.guiObject, 'restart')
+
+    // this.guiFolder.add(this.guiObject, 'fallMode', { Straight: 'straight', Spiral: 'spiral', LogSpiral: 'logSpiral'})
+    // this.guiFolder.add(this.guiObject, 'speedDown').min(0.01).max(200).onChange(()=>{this.speedDown = this.guiObject.speedDown})
+    // this.guiFolder.add(this.guiObject, 'speedPerp').min(0.01).max(200).onChange(()=>{this.speedPerp = this.guiObject.speedPerp}).name('speedRotation')
+    // this.guiFolder.add(this.guiObject, 'start')
+    // this.guiFolder.add(this.guiObject, 'pause')
+    // this.guiFolder.add(this.guiObject, 'restart')
   }
   
 }

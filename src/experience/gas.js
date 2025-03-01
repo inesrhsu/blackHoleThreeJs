@@ -34,7 +34,7 @@ export default class Gas
     this.setPoints()
 
     this.gui = new Gui()
-    this.guiFolder = this.gui.instance.addFolder('Gas').close()
+    // this.guiFolder = this.gui.instance.addFolder('Gas').close()
     this.setGui()
     
     //this.debug()
@@ -94,12 +94,15 @@ export default class Gas
 
   setGui()
   {
-    this.guiFolder.add(this.points, 'visible')
-    this.guiFolder.add(this.material, 'blending', { NormalBlending: 1, AdditiveBlending: 2}).onChange(() => this.setBlendParams())
-    this.guiFolder.add(this.material.uniforms.uSize, 'value').min(1).max(200).name('uSize').listen()
-    this.guiFolder.add(this.material.uniforms.uBrightness, 'value').min(0.01).max(20).name('uBrightness').listen()
-    this.guiFolder.add(this.material.uniforms.uPowerFunction, 'value').min(1).max(10).name('uPowerFunction').listen()
-    this.guiFolder.add(this.material.uniforms.uBHRadius, 'value').min(0.0001).max(1).name('uBHRadius')
+    
+    this.gui.instance.add(this.points, 'visible').name('gas')
+
+    // this.guiFolder.add(this.points, 'visible')
+    // this.guiFolder.add(this.material, 'blending', { NormalBlending: 1, AdditiveBlending: 2}).onChange(() => this.setBlendParams())
+    // this.guiFolder.add(this.material.uniforms.uSize, 'value').min(1).max(200).name('uSize').listen()
+    // this.guiFolder.add(this.material.uniforms.uBrightness, 'value').min(0.01).max(20).name('uBrightness').listen()
+    // this.guiFolder.add(this.material.uniforms.uPowerFunction, 'value').min(1).max(10).name('uPowerFunction').listen()
+    // this.guiFolder.add(this.material.uniforms.uBHRadius, 'value').min(0.0001).max(1).name('uBHRadius')
   }
 
   setBlendParams()

@@ -22,7 +22,7 @@ export default class BlackHole{
 
 
     this.gui = new Gui()
-    this.guiFolder = this.gui.instance.addFolder('BlackHole').close()
+    // this.guiFolder = this.gui.instance.addFolder('BlackHole').close()
     this.setGui()
 
     // this.debugTexture()
@@ -59,12 +59,13 @@ export default class BlackHole{
 
   setGui()
   {
-    this.guiFolder.add(this.blackHole, 'visible')
-    this.guiFolder.add(this.blackHoleParameters, 'radius').min(0.00000001).max(140)
-    .onChange(() =>
-    {
-      this.blackHole.scale.set(this.blackHoleParameters.radius)
-    })
+    this.gui.instance.add(this.blackHole, 'visible').name('black hole')
+    // this.guiFolder.add(this.blackHole, 'visible')
+    // this.guiFolder.add(this.blackHoleParameters, 'radius').min(0.00000001).max(140)
+    // .onChange(() =>
+    // {
+    //   this.blackHole.scale.set(this.blackHoleParameters.radius)
+    // })
    // this.guiFolder.add(this.size, '). min(0.001).max(0.2).name('BH size')
   }
 }

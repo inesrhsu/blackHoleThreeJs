@@ -43,7 +43,7 @@ export default class Stars{
     this.setPoints()
 
     this.gui = new Gui()
-    this.guiFolder = this.gui.instance.addFolder('Stars').close()
+    // this.guiFolder = this.gui.instance.addFolder('Stars').close()
     this.setGui()
 
     // this.debugTexture()
@@ -131,15 +131,16 @@ export default class Stars{
 
   setGui()
   {
-    this.guiFolder.add(this.points, 'visible')
-    this.guiFolder.add(this.psf, 'psf', {Power: 'power', Hubble: 'hubble', JWST: 'jwst', SimJWST: 'simJwst'}).onChange(() => this.setPsf())
-    this.guiFolder.add(this.material, 'blending', { NormalBlending: 1, AdditiveBlending: 2})
-    this.guiFolder.add(this.material.uniforms.uSize, 'value').min(1).max(200).name('uSize').listen()
-    this.guiFolder.add(this.material.uniforms.uSizeAttenuation, 'value').name('uSizeAttenuation').listen()
-    this.guiFolder.add(this.material.uniforms.uFarSizeDist, 'value').min(1).max(200).name('uFarSizeDist').listen()
-    this.guiFolder.add(this.material.uniforms.uSizeAttenuationCoeff, 'value').min(-20).max(20).name('uSizeAttenuationCoeff').listen()
-    this.guiFolder.add(this.material.uniforms.uBrightness, 'value').min(0.01).max(20).name('uBrightness').listen()
-    this.guiFolder.add(this.material.uniforms.uPowerFunction, 'value').min(1).max(10).name('uPowerFunction').listen()
+    this.gui.instance.add(this.points, 'visible').name('stars')
+    // this.guiFolder.add(this.points, 'visible')
+    // this.guiFolder.add(this.psf, 'psf', {Power: 'power', Hubble: 'hubble', JWST: 'jwst', SimJWST: 'simJwst'}).onChange(() => this.setPsf())
+    // this.guiFolder.add(this.material, 'blending', { NormalBlending: 1, AdditiveBlending: 2})
+    // this.guiFolder.add(this.material.uniforms.uSize, 'value').min(1).max(10).name('uSize').listen()
+    // this.guiFolder.add(this.material.uniforms.uSizeAttenuation, 'value').name('uSizeAttenuation').listen()
+    // this.guiFolder.add(this.material.uniforms.uFarSizeDist, 'value').min(1).max(200).name('uFarSizeDist').listen()
+    // this.guiFolder.add(this.material.uniforms.uSizeAttenuationCoeff, 'value').min(-20).max(20).name('uSizeAttenuationCoeff').listen()
+    // this.guiFolder.add(this.material.uniforms.uBrightness, 'value').min(0.01).max(20).name('uBrightness').listen()
+    // this.guiFolder.add(this.material.uniforms.uPowerFunction, 'value').min(1).max(10).name('uPowerFunction').listen()
   }
 
   setPsf()
